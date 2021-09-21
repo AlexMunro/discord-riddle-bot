@@ -6,11 +6,11 @@ module RiddleBot
   # Access point for commands and avoider of redundant downloads
   class RiddleBank
     def daily_riddle
-      riddles[0].to_message
+      riddles[0]
     end
 
     def random_riddle
-      riddles.sample.to_message
+      riddles.sample
     end
 
     private
