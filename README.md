@@ -3,9 +3,10 @@ Have friends? Feel the need to alienate them? Give them riddles!
 
 ## Supported commands
 
-| Command   | Description                                       |
-|-----------|---------------------------------------------------|
-| `!riddle` | Share a mind-bending and/or side-splitting riddle |
+| Command       | Description                                       |
+|---------------|---------------------------------------------------|
+| `!riddle`     | Share a mind-bending and/or side-splitting riddle |
+| `!dailyriddle`| Share a riddle of temporary significance          |
 
 ## How to run
 * Ensure you have a Ruby installed (ideally the version mentioned in `.ruby-version`)

@@ -8,3 +8,7 @@ gem "discordrb"
 gem "nokogiri"
 gem "open-uri"
 gem "whenever"
+
+group :development do
+  gem "byebug"
+end
