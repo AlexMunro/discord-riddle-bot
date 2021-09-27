@@ -10,18 +10,20 @@ module RiddleBot
   # Downloads riddles from the source of all riddles
   module Scraper
     DAILY_RIDDLE_URL = "https://www.riddles.com"
-    MANY_RIDDLES_URL = "https://www.riddles.com/riddles?sort=new"
+    NEW_RIDDLES_URL = "https://www.riddles.com/riddles?sort=new"
 
     def self.fetch_page_of_riddles
       puts "Fetching an entire page of riddles."
       puts "Be considerate and don't do this too often!"
 
-      download_page(MANY_RIDDLES_URL)
-        .css(".panel-body")
-        .to_a
-        .filter { |node| node.text.include?("Riddle:") }
-        .map { |node| parse_riddle(node) }
-        .compact
+      scrape_entire_page(NEW_RIDDLES_URL)
+    end
+
+    def self.fetch_five_pages_of_riddles
+      puts "Fetching five entire pages of riddles."
+      puts "Be considerate and don't do this too often!"
+
+      (1..5).flat_map { |n| scrape_entire_page("#{NEW_RIDDLES_URL}&page=#{n}") }
     end
 
     def self.daily_riddle
@@ -33,6 +35,15 @@ module RiddleBot
         .first
 
       parse_riddle(riddle_element)
+    end
+
+    private_class_method def self.scrape_entire_page(url)
+      download_page(url)
+        .css(".panel-body")
+        .to_a
+        .filter { |node| node.text.include?("Riddle:") }
+        .map { |node| parse_riddle(node) }
+        .compact
     end
 
     private_class_method def self.download_page(url)
