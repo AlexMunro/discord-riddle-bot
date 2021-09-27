@@ -4,7 +4,6 @@ require "open-uri"
 require "net/http"
 require "nokogiri"
 require_relative "riddle"
-require "byebug"
 
 module RiddleBot
   # Downloads riddles from the source of all riddles

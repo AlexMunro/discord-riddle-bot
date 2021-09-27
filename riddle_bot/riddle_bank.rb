@@ -6,9 +6,9 @@ module RiddleBot
   # Access point for commands and avoider of redundant downloads
   class RiddleBank
     def daily_riddle
-      return @daily_riddle if @fetched_daily == Date.today
+      return @daily_riddle if @fetched_daily == Time.now.utc.to_date
 
-      @fetched_daily = Date.today
+      @fetched_daily = Time.now.utc.to_date
       @daily_riddle = Scraper.daily_riddle
     end
 
