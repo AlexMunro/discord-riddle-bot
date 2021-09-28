@@ -21,7 +21,7 @@ module RiddleBot
 
     def client
       @client ||= Google::Cloud::TextToSpeech.text_to_speech do |config|
-        config.credentials = ENV["GCP_TTS_KEYFILE"]
+        config.credentials = ENV["GOOGLE_APPLICATION_CREDENTIALS"]
       end
     end
 

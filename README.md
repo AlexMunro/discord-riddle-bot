@@ -17,10 +17,10 @@ Have friends? Feel the need to alienate them? Give them riddles!
 * Create a Service Account for Google Cloud Platform's Text-to-Speech API and download credentials for it in a keyfile.
 * Ensure the following environment variables are configured in your shell:
 
-    | Name           | Where to find it                                                                   |
-    |----------------|------------------------------------------------------------------------------------|
-    |APP_ID          | Obtained from the Discord Developer Portal (General Information -> Application ID) |
-    |BOT_TOKEN       | Obtained from the Discord Developer Portal (Bot -> Token)                          |
-    |GCP_TTS_KEYFILE | Location of a Google Cloud Platform Text-to-Speech keyfile (only required for voice commands)
+    | Name                          | Where to find it                                                                             |
+    |-------------------------------|----------------------------------------------------------------------------------------------|
+    |APP_ID                         | Obtained from the Discord Developer Portal (General Information -> Application ID)           |
+    |BOT_TOKEN                      | Obtained from the Discord Developer Portal (Bot -> Token)                                    |
+    |GOOGLE_APPLICATION_CREDENTIALS | Location of a Google Cloud Platform Text-to-Speech keyfile (only required for voice commands)|
 
 * `bundle exec ruby run.rb`

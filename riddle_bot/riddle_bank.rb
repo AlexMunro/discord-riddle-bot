@@ -14,7 +14,7 @@ module RiddleBot
 
     def random_riddle
       @riddles ||= Scraper.fetch_five_pages_of_riddles
-      riddles.sample
+      @riddles.sample
     end
   end
 end
